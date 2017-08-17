@@ -7,6 +7,3 @@ tags: ["certificate"]
 subordinate: true
 series:
   - xenial
-requires:
-  ca-certificate:
-    scope: container
