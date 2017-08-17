@@ -24,6 +24,7 @@ def install_packages(rel=None):
     reactive.set_state('ca-certificate.installed')
     hookenv.status_set('active', 'Certificate Installed')
 
+@reactive.when('ca-certificate.installed')
 @reactive.when(config.changed('ssl_ca'))
 def update_certificate(rel=None):
     hookenv.status_set('maintenance', 'Updating ca-certificate')
