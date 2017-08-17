@@ -2,6 +2,7 @@
 import os
 import charms.reactive as reactive
 from charmhelpers.core import hookenv
+from charms import apt
 import base64
 import subprocess
 
@@ -15,6 +16,8 @@ cert_filename = os.path.join('/usr/share/ca-certificates', cert_location)
 def install_packages(rel=None):
     hookenv.status_set('maintenance', 'Installing ca-certificate')
     hookenv.log("Installing ca-certificate")
+    apt.queue_install(['ca-certificates'])
+    apt.install_queued()
     with open('/etc/ca-certificate.conf', 'a') as f:
         f.write("\n%s" % (cert_location))
     if not os.path.exists('/usr/share/ca-certificates/maas'):

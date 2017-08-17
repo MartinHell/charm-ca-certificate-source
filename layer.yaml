@@ -1,1 +1,1 @@
-includes: ['layer:basic', 'interface:juju-info']
+includes: ['layer:basic', 'layer:apt', 'interface:juju-info']
