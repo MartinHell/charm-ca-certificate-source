@@ -6,7 +6,7 @@ import base64
 import subprocess
 
 config = hookenv.config()
-cert = base64.b64decode(config['ssl_ca'])
+cert = base64.b64decode(config['ssl_ca']).decode("utf-8")
 cert_location = 'maas/public.crt'
 cert_filename = os.path.join('/usr/share/ca-certificates', cert_location)
 
