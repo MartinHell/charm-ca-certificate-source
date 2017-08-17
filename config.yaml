@@ -1,5 +1,5 @@
 options:
     ssl_ca:
-        default:
+        default: VGhpcyBpcyBhIHJlcXVpcmVkIG9wdGlvbgo=
         description: Set a base64 encoded string of the ca_file
         type: string
