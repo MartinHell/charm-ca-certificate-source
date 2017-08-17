@@ -14,7 +14,7 @@ alias dock_juju="sudo docker run --rm --name juju_dev -t -i -v $JUJU_DATA:/home/
 
 ### Clone the needed repositories to the correct paths
 ```
-git clone https://github.com/MartinHell/charm-ca-certificate.git $JUJU_REPOSITORY
+git clone https://github.com/MartinHell/charm-ca-certificate-source.git $JUJU_REPOSITORY
 ```
 
 ### Run docker and build the charm
