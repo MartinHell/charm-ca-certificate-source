@@ -10,3 +10,4 @@ series:
 requires:
     ca-certificate:
         interface: juju-info
+        scope: container
