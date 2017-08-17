@@ -16,7 +16,7 @@ cert_filename = os.path.join('/usr/share/ca-certificates', cert_location)
 def install_packages(rel=None):
     hookenv.status_set('maintenance', 'Installing ca-certificate')
     hookenv.log("Installing ca-certificate")
-    with open('/etc/ca-certificate.conf', 'a') as f
+    with open('/etc/ca-certificate.conf', 'a') as f:
         f.write(cert_location)
     with open(cert_filename, 'w') as ca_file
         ca_file.write(cert)
@@ -28,7 +28,7 @@ def install_packages(rel=None):
 def update_certificate(rel=None):
     hookenv.status_set('maintenance', 'Updating ca-certificate')
     hookenv.log('Updating ca-certificate')
-    with open(cert_filename, 'w') as ca_file
+    with open(cert_filename, 'w') as ca_file:
         ca_file.write(cert)
     subprocess.Popen("update-ca-certificates")
     hookenv.status_set('active', 'Certificate Installed')
