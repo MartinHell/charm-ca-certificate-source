@@ -16,7 +16,7 @@ def install_packages(rel=None):
     hookenv.status_set('maintenance', 'Installing ca-certificate')
     hookenv.log("Installing ca-certificate")
     with open('/etc/ca-certificate.conf', 'a') as f:
-        f.write(cert_location)
+        f.write("\n%s" % (cert_location))
     if not os.path.exists('/usr/share/ca-certificates/maas'):
         os.makedirs('/usr/share/ca-certificates/maas')
     with open(cert_filename, 'w') as ca_file:
