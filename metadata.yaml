@@ -1,0 +1,10 @@
+name: ca-certificate
+summary: Adds a ca-certificate to servers
+maintainer:  Martin Hellstrom <martin.hellstrom@dgc.se>
+description: |
+    Adds a ca-certificate of your choice to servers related to the charm.
+tags: ["certificate"]
+subordinate: true
+series:
+  - xenial
+requires:
