@@ -1,7 +1,6 @@
 #!/usr/bin/python
 import os
 import charms.reactive as reactive
-from charms import apt
 from charmhelpers.core import hookenv
 import base64
 import subprocess
@@ -18,7 +17,7 @@ def install_packages(rel=None):
     hookenv.log("Installing ca-certificate")
     with open('/etc/ca-certificate.conf', 'a') as f:
         f.write(cert_location)
-    with open(cert_filename, 'w') as ca_file
+    with open(cert_filename, 'w') as ca_file:
         ca_file.write(cert)
     subprocess.Popen("update-ca-certificates")
     reactive.set_state('ca-certificate.installed')
