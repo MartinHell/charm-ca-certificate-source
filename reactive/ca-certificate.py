@@ -21,7 +21,9 @@ def install_packages(rel=None):
         os.makedirs('/usr/share/ca-certificates/maas')
     with open(cert_filename, 'w') as ca_file:
         ca_file.write(cert)
-    subprocess.Popen("update-ca-certificates")
+    subprocess.Popen("update-ca-certificates",
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT).communicate()
     reactive.set_state('ca-certificate.installed')
     hookenv.status_set('active', 'Certificate Installed')
 
