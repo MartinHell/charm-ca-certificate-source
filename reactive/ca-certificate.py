@@ -11,6 +11,7 @@ cert = base64.b64decode(config['ssl_ca'])
 cert_location = 'maas/public.crt'
 cert_filename = os.path.join('/usr/share/ca-certificates', cert_location)
 
+@reactive.when_any('ca-certificate.available', 'ca-certificate.connected')
 @reactive.when_not('ca-certificate.installed')
 def install_packages(rel=None):
     hookenv.status_set('maintenance', 'Installing ca-certificate')

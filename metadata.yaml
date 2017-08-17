@@ -7,3 +7,6 @@ tags: ["certificate"]
 subordinate: true
 series:
   - xenial
+requires:
+    ca-certificate:
+        interface: juju-info
