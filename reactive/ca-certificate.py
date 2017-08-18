@@ -19,7 +19,7 @@ def install_packages(rel=None):
     apt.queue_install(['ca-certificates'])
     apt.install_queued()
     with open('/etc/ca-certificates.conf', 'a+') as f:
-        f.write("%s\n" % (cert_location))
+        f.write("%s\r\n" % (cert_location))
     if not os.path.exists('/usr/share/ca-certificates/maas'):
         os.makedirs('/usr/share/ca-certificates/maas')
     with open(cert_filename, 'w') as ca_file:
