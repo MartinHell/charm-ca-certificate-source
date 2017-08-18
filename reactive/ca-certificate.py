@@ -18,7 +18,7 @@ def install_packages(rel=None):
     hookenv.log("Installing ca-certificate")
     apt.queue_install(['ca-certificates'])
     apt.install_queued()
-    with open('/etc/ca-certificate.conf', 'a') as f:
+    with open('/etc/ca-certificate.conf', 'a+') as f:
         content = f.read().readlines()
         f.write("%s\n%s" % (content, cert_location))
     if not os.path.exists('/usr/share/ca-certificates/maas'):
